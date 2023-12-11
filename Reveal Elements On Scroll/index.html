@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elememnts on scroll</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: rgba(2, 10, 10);
+        }
+        section{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: aliceblue;
+        }
+        section:nth-child(odd){
+            color: aliceblue;
+            background: black;
+        }
+        section:nth-child(even){
+            color: black;
+            background: rgb(252, 252, 252);
+        }
+        section .container{
+            padding: 20px;
+        }
+        section h1{
+            font-size: 65px;
+        }
+        section h2{
+            font-size: 45px;
+            text-align: center;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+        .reveal{
+            position: relative;
+            transform: translateY(150px);
+            opacity: 0;
+            transition: all 2s ease;
+        }
+        .reveal.active{
+            transform: translateY(0px);
+            opacity: 1;
+        }
+       .cards{
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+       }
+       .text-card{
+        width: 300px;
+         padding: 30px;
+         background: rgb(65, 187, 228);
+         color: black;
+         box-shadow: 2px 3px 8px rgba(0,0,0,0.4); 
+         gap: 15px;  
+         text-align: center;
+         font-weight: 700;
+
+       }
+       .text-card p {
+        text-align: justify;
+       }
+       section:nth-child(even) .text-card{
+        background: black;
+        color: aliceblue;
+       }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>Reveal Elements on Scroll</h1>
+    </section>
+    <section>
+        <div class="container reveal">
+            <h2>Your Title</h2>
+            <div class="cards">
+            <div class="text-card">
+                <h3>Title</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi exercitationem doloremque odio, quam laudantium modi molestiae culpa quia aliquam sit natus inventore expedita aliquid nisi optio tempore possimus suscipit maiores!</p>
+            </div>
+            <div class="text-card">
+                <h3>Title</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi exercitationem doloremque odio, quam laudantium modi molestiae culpa quia aliquam sit natus inventore expedita aliquid nisi optio tempore possimus suscipit maiores!</p>
+            </div>
+            <div class="text-card">
+                <h3>Title</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi exercitationem doloremque odio, quam laudantium modi molestiae culpa quia aliquam sit natus inventore expedita aliquid nisi optio tempore possimus suscipit maiores!</p>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container reveal">
+            <h2>Your Title</h2>
+            <div class="cards">
+            <div class="text-card">
+                <h3>Title</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi exercitationem doloremque odio, quam laudantium modi molestiae culpa quia aliquam sit natus inventore expedita aliquid nisi optio tempore possimus suscipit maiores!</p>
+            </div>
+            <div class="text-card">
+                <h3>Title</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi exercitationem doloremque odio, quam laudantium modi molestiae culpa quia aliquam sit natus inventore expedita aliquid nisi optio tempore possimus suscipit maiores!</p>
+            </div>
+            <div class="text-card">
+                <h3>Title</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi exercitationem doloremque odio, quam laudantium modi molestiae culpa quia aliquam sit natus inventore expedita aliquid nisi optio tempore possimus suscipit maiores!</p>
+            </div>
+        </div>
+        </div>
+    </section>
+    <section>
+        <div class="container reveal">
+            <h2>Your Title</h2>
+            <div class="cards">
+            <div class="text-card">
+                <h3>Title</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi exercitationem doloremque odio, quam laudantium modi molestiae culpa quia aliquam sit natus inventore expedita aliquid nisi optio tempore possimus suscipit maiores!</p>
+            </div>
+            <div class="text-card">
+                <h3>Title</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi exercitationem doloremque odio, quam laudantium modi molestiae culpa quia aliquam sit natus inventore expedita aliquid nisi optio tempore possimus suscipit maiores!</p>
+            </div>
+            <div class="text-card">
+                <h3>Title</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi exercitationem doloremque odio, quam laudantium modi molestiae culpa quia aliquam sit natus inventore expedita aliquid nisi optio tempore possimus suscipit maiores!</p>
+            </div>
+        </div>
+        </div>
+    </section>
+    <section>
+        <div class="container reveal">
+            <h2>Your Title</h2>
+            <div class="cards">
+            <div class="text-card">
+                <h3>Title</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi exercitationem doloremque odio, quam laudantium modi molestiae culpa quia aliquam sit natus inventore expedita aliquid nisi optio tempore possimus suscipit maiores!</p>
+            </div>
+            <div class="text-card">
+                <h3>Title</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi exercitationem doloremque odio, quam laudantium modi molestiae culpa quia aliquam sit natus inventore expedita aliquid nisi optio tempore possimus suscipit maiores!</p>
+            </div>
+            <div class="text-card">
+                <h3>Title</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi exercitationem doloremque odio, quam laudantium modi molestiae culpa quia aliquam sit natus inventore expedita aliquid nisi optio tempore possimus suscipit maiores!</p>
+            </div>
+        </div>
+        </div>
+    </section>
+    <section style="height: 651px; background: yellowgreen; width: 100vw;">
+        
+     </section>
+
+    <script>
+        window.addEventListener("scroll", reveal);
+        function reveal(params) {
+            let reveals = document.querySelectorAll(".reveal");
+            for (let i = 0; i < reveals.length; i++) {
+                let windowHeight = window.innerHeight;
+                let revealtop  = reveals[i].getBoundingClientRect().top;  
+                let revealpoint = 150;
+                if(revealtop < windowHeight - revealpoint){
+                    reveals[i].classList.add('active');
+                } 
+                else{
+                    reveals[i].classList.remove('active');
+
+                } 
+            }
+        }
+    </script>
+</body>
+</html>

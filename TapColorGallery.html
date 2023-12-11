@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .color-palate{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        .color-palate div{
+          width: calc(100vw / 4 - 12px);
+          border: 2px solid black;
+          height: 200px;
+          cursor: pointer;
+        }
+        .color-palate div:nth-child(4){
+           background: pink;
+        }
+        .color-palate div:nth-child(3){
+            background: violet;
+        }
+        .color-palate div:nth-child(2){
+            background: purple;
+        }
+        .color-palate div:nth-child(1){
+            background: green;
+        }  
+        .reflect-palete{
+            width: 98vw;
+            height: 300px;
+            margin-top: 20px;
+            position: relative;
+        }
+        .reflect-palete div{
+            display: none;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            box-shadow: 1px 1px 3px black;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="color-palate">
+       <div onclick="change('green')"></div>
+       <div onclick="change('purple')"></div>
+       <div onclick="change('violet')"></div>
+       <div onclick="change('pink')"></div>
+    </div>
+    <div class="reflect-palete" id="frame">
+         <div id="hi">X</div>
+    </div>
+    <script>
+       const iframe = document.getElementById('frame');
+       const hi = document.getElementById('hi');
+       function change(params) {
+        iframe.style.display = "block";
+        iframe.style.backgroundColor = params;
+        hi.style.display = "block";
+      }
+      hi.addEventListener('click', ()=>{
+        iframe.style.display = "none";
+      });
+    </script>
+</body>
+</html>

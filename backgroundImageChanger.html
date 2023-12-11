@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Slider JavaScript | CodingNepal</title>
+    <!-- <link rel="stylesheet" href="css/design.css" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <!-- <script src="js/main.js" defer></script> -->
+    <style>
+      *{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  
+}
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.container{
+  transition: all 0.5s linear;
+  border: 2px solid pink;
+  outline: 5px solid darkred;
+  width: 500px;
+  height: 300px; 
+  background: url(css/all.jpg) center/cover no-repeat; 
+  position: relative;
+}
+.left{
+  width: 35px;
+  height: 35px;
+  background: rgb(239, 12, 175);
+  font-size: 25px;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 5px;
+  position: absolute;
+  top: 50%;
+  left: -15px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.right{
+  width: 35px;
+  height: 35px;
+  background: rgb(239, 12, 175);
+  font-size: 25px;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 5px;
+  position: absolute;
+  top: 50%;
+  right: -15px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+    </style>
+  </head>
+  <body>
+    <div class="container">
+       <i class="fas fa-arrow-left left"></i>
+       <i class="fas fa-arrow-right right"></i>
+    </div>
+  </body>
+  <script>
+    const container = document.querySelector(".container");
+console.log(container);
+let array = ["all.jpg","laketree.jpg", "mountainhouse.jpg", "singletree.jpg", "laketree.jpg", "watch.jpg"];
+// container.style.background = `url(css/${array[5]}) center no-repeat`;
+// // container.style.background = " url(css/laketree.jpg)";
+const buttons = document.querySelectorAll(".fas");
+console.log(buttons, typeof(buttons));
+const left = document.querySelector(".left");
+const right = document.querySelector(".right");
+let index = 0;
+left.addEventListener("click", ()=>{
+ index--;
+ if (index < 0) {
+   index = array.length-1;
+ }    
+container.style.background = `url(css/${array[index]}) center/cover no-repeat`; 
+})
+right.addEventListener("click", ()=>{
+index++;
+if (index === array.length) {
+  index = 0;
+}    
+container.style.background = `url(css/${array[index]}) center/cover no-repeat`; 
+})
+  setInterval(() => {
+    index++;
+    if (index === array.length) {
+      index = 0;
+    }
+    container.style.background = `url(css/${array[index]}) center/cover no-repeat`; 
+
+  }, 5000);
+
+
+  </script>
+
+</html>
