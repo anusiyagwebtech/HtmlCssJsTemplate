@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TypeWriting</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: rgb(19, 14, 19);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      h1 {
+        color: rgb(250, 234, 8);
+        font-size: 45px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        animation: light 1.5s linear infinite;
+      }
+      @keyframes light {
+        0% {
+          filter: hue-rotate(0deg);
+        }
+        100% {
+          filter: hue-rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body onload="typewriter()">
+    <h1 id="demo"></h1>
+
+    <script>
+      let i = 0;
+      let txt = "Hello World!";
+
+      function typewriter() {
+        if (i < txt.length) {
+          document.getElementById("demo").innerHTML += txt.charAt(i);
+          i++;
+          setTimeout(() => {
+            typewriter();
+          }, 500);
+        }
+    }
+    </script>
+  </body>
+</html>
