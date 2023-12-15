@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css Animation</title>
+    <style>
+        h1{
+          width: fit-content;
+          cursor: pointer;
+          position: relative;
+        }
+        h1::after{
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            height: 4px;
+            width: 100%;
+            left: 0;
+            background: black;
+            transform: scaleX(0);
+            transition: all ease-in-out 0.3s;
+        }
+        h1:hover::after{
+         transform: scale(1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Hover Me</h1>
+    <h1>Hover Me</h1>
+    <h1>Hover Me</h1>
+    <h1>Hover Me</h1>
+</body>
+</html>
