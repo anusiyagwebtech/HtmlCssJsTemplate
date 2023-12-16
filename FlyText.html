@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flying Text</title>
+    <style>
+      body{
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(violet,purple);
+      }
+      .txt{
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        background: black;
+        box-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+        color: aliceblue;
+        border-radius: 50%;
+      }
+      .fly-text-container{
+        /* position: absolute;
+        left: 50%;
+        top: 50%;
+        background: grey;
+        transform: translateX(-50%) translateY(-50%); */
+      }
+      .fly-text-container .txt{
+       display: inline-block;
+       opacity: 1;
+       transition: all ease 5s;
+
+      }
+      .fly-text-container.hidden .txt{
+        opacity: 0;
+      }
+      .fly-text-container.hidden .txt:nth-child(1){
+        transform: translateX(400px) translateY(-300px);
+      }
+      .fly-text-container.hidden .txt:nth-child(2){
+        transform: translateX(-200px) translateY(-100px);
+      }
+      .fly-text-container.hidden .txt:nth-child(3){
+        transform: translateX(-40px) translateY(-300px);
+      }
+      .fly-text-container.hidden .txt:nth-child(4){
+        transform: translateX(100px) translateY(30px);
+      }
+      .fly-text-container.hidden .txt:nth-child(5){
+        transform: translateX(200px) translateY(-100px);
+      }
+      .fly-text-container.hidden .txt:nth-child(6){
+        transform: translateX(300px) translateY(-10px);
+      }
+      .fly-text-container.hidden .txt:nth-child(7){
+        transform: translateX(20px) translateY(-130px);
+      }
+      .fly-text-container.hidden .txt:nth-child(8){
+        transform: translateX(-20px) translateY(-10px);
+      }
+      .fly-text-container.hidden .txt:nth-child(9){
+        transform: translateX(890px) translateY(-70px);
+      }
+      .fly-text-container.hidden .txt:nth-child(10){
+        transform: translateX(230px) translateY(102px);
+      }
+      .fly-text-container.hidden .txt:nth-child(11){
+        transform: translateX(2px) translateY(-10px);
+      }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="fly-text-container hidden" id="txt-contain">
+        <p class="txt">H</p>
+        <p class="txt">E</p>
+        <p class="txt">L</p>
+        <p class="txt">L</p>
+        <p class="txt">&nbsp;</p>
+        <p class="txt">W</p>
+        <p class="txt">O</p>
+        <p class="txt">R</p>
+        <p class="txt">L</p>
+        <p class="txt">D</p>
+
+    </div>
+    <script>
+        window.addEventListener('load', ()=>{
+            
+          setInterval(() => {
+                document.getElementById('txt-contain').classList.toggle('hidden');
+
+            }, 5000);
+            
+        })
+    </script>
+</body>
+</html>
