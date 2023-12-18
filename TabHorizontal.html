@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tab</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: linear-gradient(380deg, rgb(106, 11, 119), black);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .container {
+        border: 1px solid blanchedalmond;
+        display: flex;
+        flex-direction: column;
+        width: 1200px;
+      }
+      .container .header {
+        display: flex;
+        border-bottom: 1px solid white;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .container .header .button {
+        width: calc(100% / 6);
+        border: 0;
+        outline: 0;
+        background: transparent;
+        color: antiquewhite;
+        transition: all 0.5s linear;
+        cursor: pointer;
+        font-weight: 900;
+        font-size: 18px;
+        padding: 10px;
+      }
+      .container .header button:hover {
+        background: white;
+        color: purple;
+      }
+      .container .body {
+        color: aliceblue;
+        overflow-y: scroll;
+        text-align: justify;
+        height: 250px;
+        padding: 10px;
+      }
+      .tab-content.hide {
+        display: none;
+      }
+      .body::-webkit-scrollbar {
+       display: none;
+      }
+
+      .button.btn {
+        background: rgb(252, 252, 252) !important;
+        color: rgb(111, 4, 135) !important;
+      }
+      @media (max-width: 1000px) {
+        .container{
+          width: 800px;
+        }
+      }
+            @media (max-width: 800px) {
+        .container{
+          width: 600px;
+        }
+      }
+
+        @media (max-width: 600px) {
+        .container{
+          width: 500px;
+        }
+      }
+        @media (max-width: 500px) {
+        .container{
+          width: 95vw;
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <button onclick="show(this, 'tab1-content')" class="button btn">
+          Tab1
+        </button>
+        <button onclick="show(this,  'tab2-content')" class="button">
+          Tab2
+        </button>
+        <button onclick="show(this, 'tab3-content')" class="button">
+          Tab3
+        </button>
+        <button onclick="show(this, 'tab4-content')" class="button">
+          Tab4
+        </button>
+        <button onclick="show(this, 'tab5-content')" class="button">
+          Tab5
+        </button>
+        <button onclick="show(this, 'tab6-content')" class="button">
+          Tab5
+        </button>
+      </div>
+      <div class="body">
+        <div class="tab-content" id="tab1-content">
+          <h1>Tab 1 Content</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem dolor illo delectus quidem porro minus, alias amet at eius recusandae facilis repellat placeat, possimus expedita eos, veniam doloribus enim Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, recusandae ipsum, nobis laboriosam nostrum eveniet nihil dolor molestiae, ad incidunt quia a? Impedit ullam quidem quis accusamus eum iste exercitationem.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laudantium praesentium dolorem quis nobis harum? Iusto culpa doloremque nostrum minima, iure ex deleniti tenetur illo voluptates deserunt repellat pariatur at.</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit eveniet accusantium odit, a commodi laborum incidunt voluptates reprehenderit quia, voluptate harum culpa exercitationem atque animi autem distinctio natus dolor dolorem.</p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum enim
+            impedit vitae iure modi quidem quam, debitis quae est, eligendi vel
+            accusamus commodi voluptates officia dignissimos dicta! Possimus,
+            nam maiores? Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Minus expedita dicta harum mollitia ipsa corporis, aut
+            temporibus quis? Laboriosam laborum consequuntur cumque. Delectus
+            dolorem cupiditate cumque aspernatur tempora modi accusantium. Lorem
+            ipsum dolor sit amet consectetur adipisicing elit. Modi, deserunt!
+            Consectetur corrupti accusamus reprehenderit quae molestias rem
+            voluptas voluptatem voluptatum aspernatur, in placeat inventore
+            similique incidunt, aperiam magnam? Perspiciatis, temporibus?Lorem
+            ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt
+            reiciendis commodi rerum eius sint, sunt enim aspernatur accusamus
+            ut et recusandae ad omnis necessitatibus quae cupiditate rem,
+            exercitationem ipsa natus.
+          </p>
+        </div>
+        <div class="tab-content hide" id="tab2-content">
+          <p>tab2</p>
+        </div>
+        <div class="tab-content hide" id="tab3-content">
+          <p>any song</p>
+        </div>
+        <div class="tab-content hide" id="tab4-content">
+          <p>tab4</p>
+        </div>
+        <div class="tab-content hide" id="tab6-content">
+          <p>Hello</p>
+        </div>
+        <div class="tab-content hide" id="tab5-content">
+          <p>tab5</p>
+        </div>
+      </div>
+    </div>
+    <script>
+      function show(e, a) {
+        document.querySelectorAll(".button").forEach((value) => {
+          value.classList.remove("btn");
+        });
+        e.classList.add("btn");
+        document.querySelectorAll(".tab-content").forEach((value) => {
+          value.classList.add("hide");
+        });
+        document.getElementById(`${a}`).classList.remove("hide");
+      }
+      </script>
+  </body>
+</html>
