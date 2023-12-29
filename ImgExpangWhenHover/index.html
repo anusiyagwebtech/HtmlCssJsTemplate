@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMAGE EXPAND ON HOVER</title>
+    <style>
+       *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+       }
+       body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+       }
+       .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+       }
+       .container img{
+        height: 300px;
+        width: 50px;
+        border-radius: 20px;
+        object-fit: cover;
+        object-position: center;
+        transition: all 0.3s linear;
+       }
+       .container img:hover{
+        width: 280px;    
+       }
+       @media (max-width: 550px){
+        .container{
+            flex-direction: column;
+        }
+        .container img{
+        height: 50px;
+        width: 95vw;
+        }
+        .container img:hover{
+        height: 300px; 
+        width: 95vw;
+
+       }
+        
+
+       }
+    </style>
+</head>
+<body>    
+    <div class="container">
+      <img src="Img/FlowerSnow.jpg" alt="">
+      <img src="Img/TreeWithMoon.jpg" alt="">
+      <img src="Img/winterLeaf.jpg" alt="">
+      <img src="Img/wowmoon.jpg" alt="">
+    </div>
+   
+</body>
+</html>
