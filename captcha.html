@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button With Beautiful Hover Effect</title>
+   <style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    body{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #222;
+        gap: 30px;
+    }
+    .btn{
+        width: 200px;
+        background: #333;
+        padding: 20px;
+        text-align: center;
+         text-decoration: none;
+         position: relative;
+         border-radius: 40px;
+         transition: 0.4s linear;
+        overflow: hidden;
+
+    }
+    .btn span{
+     pointer-events: none;
+    position: relative;
+    color: rgba(255,255,255,0.4);   
+    transition: 0.5s linear; 
+    text-transform: uppercase;
+    font-size: 23px;
+    }
+    .btn:hover span{
+        color: rgba(255,255,255,1);   
+
+    }
+    .btn::before{
+        content: '';
+        position: absolute;
+        transform: translate(-50%, -50%);
+        background: var(--color);
+        width: 0px;
+        height: 0px;
+        border-radius: 50%;
+        left: var(--x);
+        top: var(--y);
+        transition:  1s, left 0s, top 0s;
+        }
+        .btn:hover::before{
+            width: 200px;
+            height: 200px;
+        }
+   </style>
+</head>
+<body>
+    <a href="#" class="btn" style="--color: yellow;"><span>Magnetic</span></a>
+    <a href="#" class="btn" style="--color: rgb(2, 151, 189);"><span>Magnetic</span></a>
+    <script>
+        const btns = document.querySelectorAll('.btn').forEach((btn) => {
+            btn.addEventListener('mousemove', (e) => {
+                let x = e.offsetX;  
+                let y = e.offsetY;
+                let btnWidth = btn.clientWidth;
+                let btnHeight = btn.clientHeight;                
+                let transX = (x - (btnWidth/2));
+                let transY = (y - (btnHeight/2));
+                let pageX = e.pageX;
+                let pageY = e.pageY;
+                let btnLeft = btn.offsetLeft;
+                let btnTop = btn.offsetTop;
+                console.log(x);
+                btn.style.transform = `translateX(${transX}px) translateY(${transY}px)`;
+                let mx = pageX - btnLeft;
+                let my = pageY - btnTop;
+                btn.style.setProperty('--x', mx + 'px');
+                btn.style.setProperty('--y', my + 'px');
+            })
+            btn.addEventListener('mouseout', () => {
+                btn.style.transform = '';
+            })
+        })
+    </script>
+</body>
+</html>
