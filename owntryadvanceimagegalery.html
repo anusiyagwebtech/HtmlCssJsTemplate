@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .body{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            height: 90vh;
+            width: 100%;
+            padding: 20px;
+        }
+        .arrow{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2px;
+        }
+        .arrow div{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #000;
+            line-height: 50px;
+            text-align: center;
+            color: #fff;
+            font-weight: 900;
+            font-size: 21px;
+            cursor: pointer;
+            box-shadow: 2px 3px 5px black;
+        }
+        .arrow div:hover{
+            box-shadow: inset 1px 2px rgba(255,255,255,0.1);
+        }
+        .container{
+            width: 1000px;
+            height: 70vh;
+            box-shadow: 2px 3px 8px rgba(0,0,0,0.3);
+            border-radius: 15px;
+            position: relative;
+            transition: 0.3s;
+
+        }
+        .slide{
+            height: 200px;
+            width: 230px; 
+            box-shadow: 3px 1px 14px rgba(0,0,0,0.1);    
+            position: absolute;     
+            border-radius: 10px;  
+            top: 40%;
+            transition: 0.3s;
+        }
+        .slide.one{
+            left: 0px !important;
+            bottom: 0px;
+            top: 0px !important;
+            right: 0px;
+            width: 100%;
+            height: 100%;
+            transition: 0.3s;
+            z-index: -1;
+        }
+        .slide:nth-child(1){
+            background: pink;
+        }
+        .slide:nth-child(2){
+            background: green;
+            
+        }
+        .slide:nth-child(3){
+            background: violet;
+                    
+        }
+        .slide:nth-child(4){
+            background: purple;
+                  
+        }
+        .two{
+            left: 370px;
+            z-index: 1000;
+
+        }
+        .three{
+            left: calc(370px + 250px);      
+            z-index: 1000;
+      
+        }
+        .four{
+            left: calc(370px + 500px);     
+            z-index: 1000 ;
+        }
+    </style>
+</head>
+<body>
+    <div class="body">   
+    <div class="container">
+      <div class="slide one">1</div>
+      <div class="slide two">2</div>
+      <div class="slide three">3</div>
+      <div class="slide four">4</div>
+    </div>
+</div>
+<div class="arrow">
+    <div class="left" onclick="backward()">&lt;</div>
+    <div class="right" onclick="forward()">&gt;</div>
+</div>
+   <script>
+    let array = ['one', 'two', 'three', 'four'];
+    let slides = document.querySelectorAll('.slide');
+    function backward() {
+        
+        slides.forEach((value) => {
+           const style =  window.getComputedStyle(value);
+           
+            console.log(style.left);
+            if (style.left  == '0px') {
+                console.log('i am slide one');
+                value.classList.remove('one');
+                value.classList.add('four');
+            }
+            else if(style.left == '370px'){
+                value.classList.remove('two');
+                value.classList.add('one');
+            }
+            else if(style.left == '620px'){
+                console.log('i am slide three');
+                value.classList.remove('three');
+                value.classList.add('two');
+
+            }
+            else if(style.left == '870px'){
+                console.log('i am slide four');
+                value.classList.remove('four');
+                value.classList.add('three');
+            }
+        })
+    }
+                
+                
+                
+          function forward() {
+           slides.forEach((value)=>{
+            const style =  window.getComputedStyle(value);
+            if (style.left  == '0px') {
+                console.log('i am slide one');
+                value.classList.remove('one');
+                value.classList.add('two');
+            }
+            else if(style.left == '370px'){
+                value.classList.remove('two');
+                value.classList.add('three');
+            }
+            else if(style.left == '620px'){
+                console.log('i am slide three');
+                value.classList.remove('three');
+                value.classList.add('four');
+
+            }
+            else if(style.left == '870px'){
+                console.log('i am slide four');
+                value.classList.remove('four');
+                value.classList.add('one');
+            }
+           })
+          }      
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            
+            
+            
+            
+            
+            
+    
+   </script>
+</body>
+</html>
