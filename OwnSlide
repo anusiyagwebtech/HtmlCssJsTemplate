@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .body{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            height: 90vh;
+            width: 100%;
+            padding: 20px;
+        }
+        .arrow{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2px;
+        }
+        .arrow div{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #000;
+            line-height: 50px;
+            text-align: center;
+            color: #fff;
+            font-weight: 900;
+            font-size: 21px;
+            cursor: pointer;
+            box-shadow: 2px 3px 5px black;
+        }
+        .arrow div:hover{
+            box-shadow: inset 1px 2px rgba(255,255,255,0.1);
+        }
+        .container{
+            width: 1000px;
+            height: 70vh;
+            box-shadow: 2px 3px 8px rgba(0,0,0,0.3);
+            border-radius: 15px;
+            position: relative;
+            transition: 0.3s;
+
+        }
+        .slide{
+            height: 200px;
+            width: 230px; 
+            box-shadow: 3px 1px 14px rgba(0,0,0,0.8);    
+            position: absolute;     
+            border-radius: 10px;  
+            top: 40%;
+            transition: 0.3s;
+           
+        }
+        .slide .content{
+            opacity: 0;
+        }
+        .slide.one{
+            left: 0px !important;
+            bottom: 0px;
+            top: 0px !important;
+            right: 0px;
+            width: 100%;
+            height: 100%;
+            transition: 0.3s;
+            z-index: -1;
+            
+        }
+        .slide.one .content{
+            opacity: 1;
+        }
+        .slide:nth-child(1){
+            background: linear-gradient(rgb(0, 0, 255,0.4),rgb(238, 130, 238,0.5)),url('flower.jpg') center/cover no-repeat;
+            background: black;
+
+        }
+        .slide:nth-child(2){
+            background: url('glit.jpg') center/cover no-repeat;
+            background: darkblue;
+
+            
+        }
+        .slide:nth-child(3){
+            background: url('rose.jpg') center/cover no-repeat;
+            background: purple;
+
+                    
+        }
+        .slide:nth-child(4){
+            background: url('spar.jpg') center/cover no-repeat;
+            background: orangered;
+
+        }
+        .slide:nth-child(5){
+            background: url('spread.jpg') center/cover no-repeat;
+            background: darkgreen;
+
+        }
+        .slide:nth-child(6){
+            background: url('roses.jpg') center/cover no-repeat;
+            background: deeppink;
+
+        }
+        .two{
+            left: 50%;
+            z-index: 1;
+            display: block;
+            transition: 0.3s;
+
+        }
+        .three{
+            left: 70%;      
+            z-index: 10; 
+            display: block;
+            transition: 0.3s;
+
+        }
+        .four{
+            left: 90%;     
+            z-index: 1000;
+            display: block;
+            transition: 0.3s;
+
+        }
+        .five{
+            left: 110%;
+            display: none;
+            transition: 0.3s;
+        }
+        .six{
+            left: 120%;
+            display: none;
+            transition: 0.3s;
+
+        }
+        @media (max-width: 1125px){
+            .body{
+                padding: 5px;
+            }
+            .container{
+                width: 80vw;
+            }
+            .two{
+                left: 60%;
+                z-index: 1;
+            }
+            .three{
+                left: 75%;
+                z-index: 10;
+            }
+            .four{
+                left: 90%;
+                z-index: 1000;
+            }
+        }
+        @media (max-width: 868px){
+            .two{
+                left: 55%;
+                z-index: 1;
+            }
+            .three{
+                left: 65%;
+                z-index: 10;
+            }
+            .four{
+                left: 75%;
+                z-index: 1000;
+            }
+
+        }
+        @media (max-width: 593px){
+            .slide{
+                width: 100px;
+                height: 100px;
+                top: 80%;
+            }
+            .two{
+                left: 55%;
+                z-index: 1;
+            }
+            .three{
+                left: 65%;
+                z-index: 10;
+            }
+            .four{
+                left: 75%;
+                z-index: 1000;
+            }
+        }
+        @media (max-width: 350px){
+            .container{
+                height: 90vw;
+            }
+            .slide{
+                top: 70%;
+            }
+            .two{
+                left: 45%;
+                z-index: 1;   
+            }
+            .three{
+                left: 55%;
+                z-index: 10;
+            }
+            .four{
+                left: 65%;
+                z-index: 1000;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="body">   
+    <div class="container">
+      <div class="slide one" >
+        <div class="content">
+           <h1>Cherry Blossom <strong style="color: violet">1</strong></h1>
+        </div>
+      </div>
+      <div class="slide two">
+        <div class="content">
+            <h1>Pink Rose <strong style="color: violet">2</strong></h1>
+        </div>
+      </div>
+      <div class="slide three">
+        <div class="content">
+            <h1>Red Rose <strong style="color: violet">3</strong></h1>
+        </div>
+      </div>
+      <div class="slide four">
+        <div class="content">
+            <h1>Sparrow <strong style="color: violet">4</strong></h1>
+        </div>
+      </div>
+      <div class="slide five">
+        <div class="content">
+            <h1>Bottle Roses <strong style="color: violet">5</strong></h1>
+        </div>
+      </div>
+      <div class="slide six">
+        <div class="content">
+            <h1>Spread Flower <strong style="color: violet">6</strong></h1>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="arrow">
+    <div class="left" onclick="backward()">&lt;</div>
+    <div class="right" onclick="forward()">&gt;</div>
+</div>
+   <script>
+    let slide1,slide2,slide3,slide4;   
+    slide1 =  window.getComputedStyle(document.querySelector('.one')).left;
+    slide2 =  window.getComputedStyle(document.querySelector('.two')).left;
+    slide3 =  window.getComputedStyle(document.querySelector('.three')).left;
+    slide4 =  window.getComputedStyle(document.querySelector('.four')).left;
+    slide5 =  window.getComputedStyle(document.querySelector('.five')).left;
+    slide6 =  window.getComputedStyle(document.querySelector('.six')).left;
+
+    console.log(slide1,slide2,slide3,slide4);
+    let array = ['one', 'two', 'three', 'four'];
+    let slides = document.querySelectorAll('.slide');
+    function backward() {
+        slides.forEach((value) => {
+           const style =  window.getComputedStyle(value);         
+            console.log(style.left);
+            if (style.left  == slide1) {
+                console.log('i am slide one');
+                value.classList.remove('one');
+                value.classList.add('six');
+            }
+            else if(style.left == slide2){
+                value.classList.remove('two');
+                value.classList.add('one');
+            }
+            else if(style.left == slide3){
+                console.log('i am slide three');
+                value.classList.remove('three');
+                value.classList.add('two');
+            }
+            else if(style.left == slide4){
+                console.log('i am slide four');
+                value.classList.remove('four');
+                value.classList.add('three');
+            }
+            else if(style.left == slide5){
+                console.log('i am slide four');
+                value.classList.remove('five');
+                value.classList.add('four');
+            }
+            else if(style.left == slide6){
+                console.log('i am slide four');
+                value.classList.remove('six');
+                value.classList.add('five');
+            }
+
+
+        })
+    }
+                
+                
+                
+          function forward() {
+           slides.forEach((value)=>{
+            const style =  window.getComputedStyle(value);
+            if (style.left  == slide1) {
+                console.log('i am slide one');
+                value.classList.remove('one');
+                value.classList.add('two');
+            }
+            else if(style.left == slide2){
+                value.classList.remove('two');
+                value.classList.add('three');
+            }
+            else if(style.left == slide3){
+                console.log('i am slide three');
+                value.classList.remove('three');
+                value.classList.add('four');
+
+            }
+            else if(style.left == slide4){
+                console.log('i am slide four');
+                value.classList.remove('four');
+                value.classList.add('five');
+            }
+            else if(style.left == slide5){
+                console.log('i am slide four');
+                value.classList.remove('five');
+                value.classList.add('six');
+            }
+            else if(style.left == slide6){
+                console.log('i am slide four');
+                value.classList.remove('six');
+                value.classList.add('one');
+            }
+           })
+          };      
+                
+                
+            
+                
+                
+                
+                
+                
+                
+                
+                
+            
+            
+            
+            
+            
+            
+    
+   </script>
+</body>
+</html>
