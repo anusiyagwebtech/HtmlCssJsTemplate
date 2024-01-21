@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        button{
+            width: 150px;
+            height: 70px;
+            padding: 10px 30px;
+            cursor: pointer;
+            border: 0;
+            border-radius: 35px;
+            background: rgb(109, 3, 74);
+            color: antiquewhite;
+            position: relative;
+            transition: 0.2s;
+            overflow: hidden;
+            z-index: 1000;
+            font-weight: 900;
+            font-size: 20px;
+            box-shadow: 2px 3px 19px rgba(0,0,0,0.8);
+        }
+        button a{
+            display: block;
+        }
+        button::before{
+            content: '';
+            width: 150px;
+            height: 150px;
+            background: black;
+            border-radius: 50%;
+            position: absolute;
+            display: none;
+            transition: 0.2s, center top;
+        }
+        button:hover::before{
+            display: block;
+            left: var(--left);
+            top: var(--top);
+            z-index: -1;
+            transition: 0.2s, center top;
+
+        }
+    </style>
+</head>
+<body>
+    <button>
+       Hello
+    </button>
+    <script>
+        const btn = document.querySelector('button');
+        btn.addEventListener('mousemove', (e)=>{
+         const btnwidth = btn.offsetWidth;
+         const btnheight = btn.offsetHeight;
+         const l = e.offsetX;
+         const t = e.offsetY;
+         const left = `${l - btnwidth/2 }px`;
+         const top = `${t - btnheight}px`;
+         btn.style.setProperty('--left', left);
+         btn.style.setProperty('--top', top);
+        });
+    </script>
+</body>
+</html>
