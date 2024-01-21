@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Hover Effect Two</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        button{
+            padding: 15px 30px;
+            border-radius: 20px;
+            border: 0;
+            background: linear-gradient(45deg,purple,darkblue);
+            color: aliceblue;
+            cursor: pointer;
+            position: relative;
+           z-index: 1000;
+           transform: 3s ;
+           overflow: hidden;
+        }
+        button::before{
+            border-radius: 20px;
+            content: '';
+            width: var(--w);
+            height: var(--h);
+            background: rgba(0,0,0,0.3);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            transform: scale(0);
+            transition: 0.5s ;
+            transform-origin:  var(--l) var(--t);
+        }
+        button:hover::before{
+            transform: scale(1);
+            border-radius: 20px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <button>Hello World!</button>
+    <script>
+        const btn = document.querySelector('button');
+        console.log(btn.offsetWidth,btn.offsetHeight);
+        btn.style.setProperty('--w', `${btn.offsetWidth}px`);
+        btn.style.setProperty('--h', `${btn.offsetHeight}px`);
+        btn.addEventListener('mousemove', (e)=>{
+          const l = e.offsetX;
+          const t = e.offsetY;
+          btn.style.setProperty('--t',`${t}px`);
+          btn.style.setProperty('--l',`${l}px`);
+
+        })
+
+    </script>
+</body>
+</html>
