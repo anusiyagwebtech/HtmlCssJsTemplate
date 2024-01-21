@@ -28,13 +28,14 @@
            z-index: 1000;
            transform: 3s ;
            overflow: hidden;
+           box-shadow: 2px 3px 8px black;
         }
         button::before{
             border-radius: 20px;
             content: '';
             width: var(--w);
             height: var(--h);
-            background: rgba(0,0,0,0.3);
+            background: linear-gradient(90deg,purple,darkblue);
             position: absolute;
             top: 0;
             left: 0;
@@ -53,9 +54,12 @@
 </head>
 <body>
     <button>Hello World!</button>
+    <button>Hello World!</button>
+
     <script>
-        const btn = document.querySelector('button');
-        console.log(btn.offsetWidth,btn.offsetHeight);
+        const btns = document.querySelectorAll('button');
+        btns.forEach((btn)=>{
+            console.log(btn.offsetWidth,btn.offsetHeight);
         btn.style.setProperty('--w', `${btn.offsetWidth}px`);
         btn.style.setProperty('--h', `${btn.offsetHeight}px`);
         btn.addEventListener('mousemove', (e)=>{
@@ -63,6 +67,8 @@
           const t = e.offsetY;
           btn.style.setProperty('--t',`${t}px`);
           btn.style.setProperty('--l',`${l}px`);
+
+        })
 
         })
 
