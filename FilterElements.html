@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter Div</title>
+     <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        header{
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        header button{
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: 0;
+            box-shadow: inset -2px -4px 8px rgba(0,0,0,0.4);
+            cursor: pointer;
+            background: #000;
+            color: #fff;
+            box-shadow: 2px 3px 8px rgba(0,0,0,0.4);
+        }
+        header button:hover{
+            box-shadow: 2px 4px 8px rgba(0,0,0,0.4), -2px -3px 5px rgba(0,0,0,0.4);  
+        }
+        .container{
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            padding: 30px;
+            justify-content: center;
+        }
+        .box{
+            width: 150px;
+            height: 150px;
+            background: rgb(20, 16, 16);
+            color: pink;
+            border-radius: 15px;
+            box-shadow: 2px 4px 19px rgba(0,0,0,0.4);
+            text-align: center;
+            line-height: 150px;
+        }
+        .btn.glow,.btn:hover{
+            background: linear-gradient(lightblue,skyblue);
+            color: #000;
+        }
+       .box,.head{
+        text-align: center;
+        display: none;
+       }
+     </style>
+</head>
+<body>
+   <header>
+       <button onclick="blocky('all')" class="btn glow">All</button>
+       <button onclick="blocky('fruit')" class="btn">Fruits</button>
+       <button onclick="blocky('veg')" class="btn">Vegetables</button>
+       <button onclick="blocky('vehicle')" class="btn">Vechicles</button>
+       <button onclick="blocky('juice')" class="btn">Juice</button>
+       <button onclick="blocky('flower')" class="btn">Flowers</button>
+
+   </header>
+   <h1 class="head all">ALL</h1>
+   <h1 class="head fruit">Fruits</h1>
+   <h1 class="head veg">Vegetables</h1>
+   <h1 class="head vehicle">Vechicles</h1>
+   <h1 class="head juice">Juice</h1>
+   <h1 class="head flower">Flowers</h1>
+   <h1 class="head orange"><a href="#" onclick="blocky('all')">&leftarrow;</a> Orange</h1>
+   <h1 class="head color" ><a href="#" onclick="blocky('orange')">&leftarrow;</a>Color</h1>
+   <h1 class="head pink" ><a href="#" onclick="blocky('color')">&leftarrow;</a>Pink</h1>
+   <div class="container">
+     <div class="box all fruit">Kiwi</div>
+     <div class="box all fruit juice">apple</div>
+     <div class="box all veg">brinjaal</div>
+     <div class="box all fruit juice" onclick="blocky('orange')">orange</div>
+     <div class="box  orange">juice</div>
+     <div class="box  orange">Fruit</div>
+     <div class="box  orange" onclick="blocky('color')">Color</div>
+     <div class="box  color">Red</div>
+     <div class="box  color" >Yellow</div>
+     <div class="box  color" onclick="blocky('pink')">Pink</div>
+     <div class="box all color">Green</div>
+     <div class="box flower pink">Rose</div>
+     <div class="box flower pink">Blossom</div>
+
+     <div class="box all fruit">banana</div>
+     <div class="box all vehicle">car</div>
+     <div class="box all vehicle">cycle</div>
+     <div class="box all fruit">Strawberry</div>
+     
+     <div class="box all veg">tomato</div>
+     <div class="box  flower">Rose</div>
+     <div class="box all flower">Lotus</div>
+     <div class="box  flower">Jasmine</div>
+   </div>
+ <script>
+    function Display(classname,displayState) {
+        document.querySelectorAll(`.${classname}`).forEach((value)=>{
+            value.style.display = displayState;
+        })
+    }
+
+    function blocky(classname) {
+        Display('box','none');
+        Display('head','none');
+        Display(classname,'block');
+    }
+    blocky('all');
+    const buttons = document.querySelectorAll('.btn');
+    console.log(buttons);
+    
+    buttons.forEach((btn,i,btns)=>{
+        btn.addEventListener('click',(e)=>clicky(e,buttons));
+    });
+
+    function clicky(e,array) {
+        array.forEach((value)=>{
+            if(value.classList.contains('glow')){
+                value.classList.remove('glow');
+            }
+        })
+        e.target.classList.add('glow');
+    }
+</script>
+</body>
+</html>
