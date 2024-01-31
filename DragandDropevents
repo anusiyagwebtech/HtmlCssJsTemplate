@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border: 1px solid black;
+            width: 300px;
+            height: 250px;
+            margin: 20px;
+            padding: 15px;
+           
+        }
+       .div1{
+       
+         color: aqua;
+         background: black;
+       
+        } 
+        .div2{
+        
+         background: aqua;
+         color: black;
+         
+        } 
+        
+    </style>
+</head>
+<body>
+    <div draggable="true" ondragstart="dragstart(event,this,'div1')"  ondragover="dropover(event)" ondrop="drop(event,'div1')" ><p id="hii">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque laudantium doloremque rerum itaque consequuntur ipsam. Iusto assumenda tempore illum, adipisci laudantium sit dicta eum, animi saepe vel iure enim.</p></div>
+    <div ondragover="dropover(event)" ondrop="drop(event,'div2')" ondragstart="dragstart(event, this,'div2')" draggable="true"></div>
+    <script>
+        const dragstart = (e, thi,clas) => {
+            console.log(e.dataTransfer);
+            e.dataTransfer.setData('will', thi.querySelector('p').id);
+            e.target.classList.remove(clas);
+        }
+        const dropover = (eve) => {
+            eve.preventDefault();
+        }
+        const drop = (e,clas)=> {
+            console.log(e);
+            const data = e.dataTransfer.getData('will');
+            console.log(data);
+            e.target.appendChild(document.getElementById(data));
+            e.target.classList.add(clas);
+        }
+    </script>
+</body>
+</html>
