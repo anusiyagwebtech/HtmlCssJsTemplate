@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="search things..." onkeyup="fun(this)">
+    <ul id="ul">
+        <li><a href="#">melom</a></li>
+        <li><a href="#">window</a></li>
+        <li><a href="#">grinder</a></li>
+        <li><a href="#">Just that</a></li>
+        <li><a href="#">Pink venom</a></li>
+    </ul>
+
+    <script>
+       function fun(it) {
+        let input_value = it.value;
+        let ul = document.querySelector('ul');
+        let lists = ul.querySelectorAll('li');
+        lists.forEach((li)=>{
+          let a_text = li.querySelector('a').innerText;
+          if (a_text.toUpperCase().indexOf(input_value.toUpperCase()) > -1) {
+            li.style.display = 'block';
+          }
+          else{
+            li.style.display = 'none';
+          }
+          
+        })
+
+       }
+       const a = 'grey sandel';
+      console.log(a.indexOf('dn')); 
+      if (condition) {
+        
+      }
+    </script>
+</body>
+</html>
