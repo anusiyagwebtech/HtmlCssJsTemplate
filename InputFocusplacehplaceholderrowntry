@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .form {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(rgb(32, 29, 30), rgb(40, 1, 58));
+      }
+      .form form {
+         padding: 20px;
+         background: rgba(0, 0, 0, 0.1);
+         box-shadow: 1px 1px 3px rgba(255,255,255,0.7), -1px -1px 3px rgba(255,255,255,0.3);
+      }
+      .input {
+        width: 250px;
+       
+        margin-bottom: 10px;
+      
+      }
+      fieldset {
+        border: 0;
+       transition: 0.3s linear;
+      }
+      .input input {
+        height: 35px;
+        width: 100%;
+        padding: 0px 10px;
+        background: transparent;
+        color: pink;
+        border: 0;
+        outline: 0;
+        border: 1px solid pink;
+      }
+      fieldset legend {
+        opacity: 0;
+        color: pink;
+      }
+      input:focus {
+        border: 0;
+      }
+      fieldset:has(input:focus) {
+        border: 1px solid pink;
+        padding: 0px 10px ;
+      }
+      fieldset:has(input:focus) legend {
+        opacity: 1;
+      }
+      input::placeholder{
+        color: pink;
+      }
+      input:focus::placeholder {
+        opacity: 0;
+        /* transition: 0.2s; */
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="form">
+    <form action="">
+  <div class="input">
+    <fieldset>
+      <legend>Name</legend>
+      <input type="text" placeholder="Name" />
+    </fieldset>
+  </div>
+  <div class="input">
+    <fieldset>
+      <legend>Email</legend>
+      <input type="text" placeholder="Email" />
+    </fieldset>
+  </div>
+  <div class="input">
+    <fieldset>
+      <legend>Phone</legend>
+      <input type="text" placeholder="Phone" />
+    </fieldset>
+  </div>
+</form>
+</div>
+  </body>
+</html>
