@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .custom-dropdown {
+         background: linear-gradient(33deg,aliceblue, antiquewhite);
+         position: relative;
+      }
+      .custom-dropdown .drophead {
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+      }
+      .custom-dropdown .drophead .arrow-down-icon{
+        padding: 0px 10px;
+        margin-top: -5px;
+        transition: 0.4s;
+      }
+      .custom-dropdown .drophead  .arrow-down-icon.icon-style {
+        transform : rotate(180deg);
+        margin-top: 5px;  
+        user-select: none;
+      }
+      .custom-dropdown .drophead input{
+        height: 100%;
+        border: 0;
+        outline: 0;
+        background: transparent;
+        padding: 5px 10px;
+      }
+      .custom-dropdown .dropcontent {
+        position: absolute;
+        background: inherit;
+        top: 45px;
+        left: 0px;
+        right: 0px;
+        transform: scaleY(0);
+        transition: 0.4s;
+        z-index: 10;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+      }
+      .custom-dropdown .dropcontent.drop-block{
+        transform: scaleY(1);
+      }
+      .custom-dropdown .dropcontent .item{
+        padding: 5px 10px;
+    
+
+      }
+      .custom-dropdown .dropcontent div.item:hover{
+       background: linear-gradient(-33deg,aliceblue, antiquewhite);
+      }
+     
+    </style>
+</head>
+<body>
+
+  <div class="custom-dropdown">
+    <div class="drophead">
+     <input type="text" placeholder="select" value="select"> <span class="arrow-down-icon" onclick="dropi(this)">&#x2304;</span>
+    </div>
+    <div class="dropcontent">
+       <div class="item">html</div>
+       <div class="item">css</div>
+       <div class="item">js</div>
+       <div class="item">c</div>
+       <div class="item">c++</div>
+    </div>
+  </div>
+  <div class="custom-dropdown">
+    <div class="drophead">
+     <input type="text" placeholder="select" value="select"> <span class="arrow-down-icon" onclick="dropi(this)">&#x2304;</span>
+    </div>
+    <div class="dropcontent">
+       <div class="item">html</div>
+       <div class="item">css</div>
+       <div class="item">js</div>
+       <div class="item">c</div>
+       <div class="item">c++</div>
+    </div>
+  </div>
+  <div class="custom-dropdown">
+    <div class="drophead">
+     <input type="text" placeholder="select" value="select"> <span class="arrow-down-icon" onclick="dropi(this)">&#x2304;</span>
+    </div>
+    <div class="dropcontent">
+       <div class="item">html</div>
+       <div class="item">css</div>
+       <div class="item">js</div>
+       <div class="item">c</div>
+       <div class="item">c++</div>
+    </div>
+  </div>
+ 
+ <script>
+   const dropi = (e) => {
+    const input = e.parentNode.querySelector('input');
+    const drop = e.parentNode.parentNode.querySelector(".dropcontent");
+    drop.classList.toggle('drop-block');    
+    e.classList.toggle("icon-style");  
+    drop.querySelectorAll(".item").forEach(element => {
+      element.addEventListener('mousemove', (a) => {
+    console.log(      a.target.innerText);
+    input.value =  a.target.innerText;
+    element.addEventListener('click', () => {
+      drop.classList.remove('drop-block');
+      e.classList.remove("icon-style");  
+    })
+  })
+})
+  
+  }
+ </script>
+    
+</body>
+</html>
