@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+    }
+    .line-canvas{
+      width: 300px;
+      height: 300px;      
+   
+    }
+    .canva-container{
+        width: 500px;
+        height: 450px;
+      }
+    @media (max-width: 550px) {
+      .canva-container{
+        width: 95vw;
+        height: 400px;
+      }
+    }
+    @media (max-width: 350px) {
+      .line-canvas{
+        width: 90vw;
+        height: 90vw;      
+        background: rgba(4, 60, 105, 0.1);
+      }
+    }
+  </style>
+</head>
+<body>
+ <div  class="canva-container">
+  <canvas id="myLine" class="line-canvas" width="400" height="400"></canvas>
+ </div>
+ 
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const ctx = document.getElementById("myLine").getContext("2d"); // canvas context
+  let lineChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ["sunday", "Monday", "Tuesday", "wednesday", "Thursday", "Friday", "Saturday"],
+      datasets: [{
+        label: 'week 1',
+        data: [47, 48, 30, 19, 38, 78, 81], // Data points for each label
+        borderColor: 'rgba(0, 0, 0, 1)', // Border color of the line
+        borderWidth: 2, // Width of the line
+        fill: false, // Don't fill area under the line
+        lineTension: 0.3,
+        backgroundColor: 'red',
+        pointBackgroundColor: 'lavender',
+        pointHoverBorderColor: 'chartreuse',
+        pointHoverBorderWidth: 4,
+        pointHoverBackgroundColor: 'green'
+
+      },
+      {
+        label: 'northindia',
+        data: [54, 67, 30, 71, 80, 80], // Data points for each label
+        borderColor: 'rgba(255, 222, 0, 1)', // Border color of the line
+        borderWidth: 2, // Width of the line
+        fill: false, // Don't fill area under the line
+        lineTension: 0.3,
+        backgroundColor: 'green',
+        borderCapStyle: 'butt',
+        pointBorderColor: 'aliceblue',
+        borderJoinStyle: 'round'
+      }
+    ]
+    },
+    options: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true // Start y-axis from zero
+          }
+        }]
+      }
+    }
+  });
+</script>
+</body>
+</html>
