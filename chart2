@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      #chart-container {
+        width: 500px;
+        height: 450px;
+        border: 1px solid beige;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #barchart {
+        width: 500px;
+        height: auto;
+        border: 1px solid rgb(119, 119, 29);
+        height: 450px;
+      }
+      @media (max-width: 550px) {
+        #chart-container {
+          width: 95vw;
+          height: auto;
+        }
+        #barchart {
+          width: 95vw;
+          height: auto;
+
+          border: 1px solid rgb(122, 10, 133);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="chart-container">
+      <canvas id="barchart"></canvas>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js"
+      integrity="sha512-PJa3oQSLWRB7wHZ7GQ/g+qyv6r4mbuhmiDb8BjSFZ8NZ2a42oTtAq5n0ucWAwcQDlikAtkub+tPVCw4np27WCg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+     
+      try {
+        axios
+          .get("https://65d47c9c3f1ab8c634354202.mockapi.io/barchart")
+          .then((res) => {
+            console.log(res.data);
+
+            const ctx = document.getElementById("barchart").getContext("2d"); // canvas context
+            let barChart = new Chart(ctx, {
+              type: "bar",
+              data: {
+                labels: [
+                  "sunday",
+                  "monday",
+                  "tuesday",
+                  "wednesday",
+                  "thursday",
+                  "friday",
+                  "saturday",
+                ],
+                datasets: res.data,
+              },
+
+              options: {
+                scales: {
+                  yAxes: [
+                    {
+                      ticks: {
+                        beginAtZero: true, // Start y-axis from zero
+                      },
+                    },
+                  ],
+                },
+              },
+            });
+          })
+          .catch((reason) => {
+            console.log(reason);
+          });
+      } catch (error) {
+        console.log(error);
+      }
+    </script>
+  </body>
+</html>
