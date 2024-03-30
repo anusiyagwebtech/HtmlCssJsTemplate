@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body{
+      background: rgb(226, 225, 225);
+
+    }
+    .charts {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      width: 100%;
+      height: 400px;
+      background: rgb(226, 225, 225);
+      padding: 10px;
+    }
+    .charts .bar-chart{
+      width: 50%;
+      background: rgb(250, 249, 249);
+      height: 100%;
+    }
+    @media (max-width: 550px) {
+      .charts {
+        flex-direction: column;
+        height: auto;
+      }
+      .charts .bar-chart{
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+   <div class="charts">
+    <div class="bar-chart">
+      <canvas id="piechart" width="500" height="400"></canvas>
+    </div>
+    <div class="bar-chart">
+      <canvas id="piechart2" width="500" height="400"></canvas>
+    </div>
+   </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const ctx = document.getElementById('piechart').getContext("2d");
+    const ctx2 = document.getElementById('piechart2').getContext("2d");
+
+    const data = {
+      labels: ["Morning", "daytime", "Night", "extra"],
+      datasets: [
+        {
+          label: 'Monday',
+          data: [25, 30, 35, 10],
+          backgroundColor: ["pink", 'lavender', 'violet', 'purple']
+        },
+        {
+          label: 'Tuesday',
+          data: [15, 50, 5, 30],
+          backgroundColor: ["green", 'red', 'blue', 'grey']
+        },
+        {
+          label: 'Tuesday',
+          data: [15, 50, 5, 30],
+          backgroundColor: ["chartreuse", 'darkblue', 'brown', 'aqua']
+        }
+      ]
+    }
+
+    const datas = {
+      labels: ["Morning", "daytime", "Night", "extra"],
+      datasets: [
+        {
+          label: 'Monday',
+          data: [100, 100, 100, 100],
+          backgroundColor: ["pink", 'lavender', 'violet', 'purple']
+        },
+       
+      ]
+    }
+    const options = {
+      responsive: true,
+      maintainAspectRatio: false,
+    }
+
+
+    let chart = new Chart(ctx, {
+      type: 'pie',
+      data: data,
+      options: options,
+    })
+    
+    let chart2 = new Chart(ctx2,{
+      type: 'pie',
+      data: datas,
+      options: options
+    })
+  </script>
+</body>
+</html>
