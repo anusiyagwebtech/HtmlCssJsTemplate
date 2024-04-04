@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <style>
+    body {
+      height: 100vh;
+      background: linear-gradient(rgb(153, 248, 220), rgb(174, 250, 205));
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.3);
+      box-shadow: 1px 1px 4px rgba(0,0,0,0.4), -1px -1px 4px rgba(255,255,255,0.4);
+      border-radius: 5px;
+      padding: 20px;
+    }
+    .stars i {
+      font-size: 23px;
+      margin-left: 5px;
+      color: #ffb001;
+      cursor: pointer;
+      transition: 0.2s linear;
+    }
+    
+  </style>
+</head>
+<body>
+  
+     <div class="box">
+      <h3>How was your experience?</h3>
+      <div class="stars">
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+      </div>
+     </div>
+     <div class="box">
+      <h3>How was your experience?</h3>
+      <div class="stars">
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+      </div>
+     </div>
+    <script>
+      const starcoontainer = document.querySelectorAll('.stars');
+     starcoontainer.forEach((starcontainer) => {
+      const stars = starcontainer.querySelectorAll('.fa-star');
+      
+      stars.forEach((starss, i) => {
+          starss.addEventListener('click', () => {
+            console.log(i, 'star index');
+            stars.forEach((value,index) => {
+              console.log(index);
+              i >= index ? value.classList.add('fa-solid') : value.classList.remove('fa-solid');
+            })
+          })
+      })
+     })
+    
+    
+     
+
+    </script>
+</body>
+</html>
