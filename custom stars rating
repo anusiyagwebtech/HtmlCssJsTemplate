@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <style>
+    body {
+      height: 100vh;
+      background: linear-gradient(rgb(153, 248, 220), rgb(174, 250, 205));
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.3);
+      box-shadow: 1px 1px 4px rgba(0,0,0,0.4), -1px -1px 4px rgba(255,255,255,0.4);
+      border-radius: 5px;
+      padding: 20px;
+    }
+    .stars i {
+      font-size: 23px;
+      margin-left: 5px;
+      color: #ffb001;
+      cursor: pointer;
+      transition: 0.2s linear;
+    }
+    .stars i.fa-solid.fa-star {
+     text-shadow: 1px 1px 3px #ffb001,2px 2px 8px rgb(236, 226, 203), 1px 1px 3px #0f0f0e;
+     animation: glowup 0.4s linear 1;
+    }
+    @keyframes glowup {
+      0% {
+        filter: hue-rotate(0deg);
+      }
+      100% {
+        filter: hue-rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  
+     <div class="box">
+      <h3>How was your experience?</h3>
+      <div class="stars">
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+      </div>
+     </div>
+     <div class="box">
+      <h3>How was your experience?</h3>
+      <div class="stars">
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+      </div>
+     </div>
+     <div class="box">
+      <h3>How was your experience?</h3>
+      <div class="stars">
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+      </div>
+     </div>
+    <script>
+
+      const stars = document.querySelectorAll('.stars');
+      console.log(stars);
+      stars.forEach((starss) => {
+             const star = starss.querySelectorAll('.fa-star');
+             star.forEach((value, i, array) => {
+        const a = [];
+        value.addEventListener('click', () => {
+          while ( i > -1) {
+            a.push(array[i])
+            i--;
+          }
+          array.forEach((el,i) => {
+          
+            if (el.classList.contains('fa-solid')) {
+              console.log(el);
+              el.classList.remove('fa-solid');
+            }
+          })
+         
+          a.forEach((v, i , arr) => {
+            
+            v.classList.toggle('fa-solid');
+
+          })
+
+        })
+      })
+
+             
+      })
+     
+      
+     
+    </script>
+</body>
+</html>
