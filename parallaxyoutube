@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      body {
+        min-height: 100vh;
+        overflow-x: hidden;
+        background: #f9f9f9;
+      }
+      header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1;
+        padding: 20px;
+      }
+      .logo {
+        font-size: 2em;
+        color: #359381;
+        pointer-events: none;
+      }
+      .navigation a {
+        text-decoration: none;
+        color: #359381;
+        font-weight: 600;
+        padding: 6px 15px;
+        margin: 0 10px;
+        border-radius: 10px;
+        transition: 0.4s;
+      }
+      .navigation a:hover,
+      .navigation a.active {
+        background: #359381;
+        color: #f9f9f9;
+      }
+      .parallax {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+      }
+      .parallax img {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        object-fit: contain;
+      
+      }
+      #text {
+        position: absolute;
+        font-size: 5em;
+        color: #fff;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+      }
+      .sec{
+        position: relative;
+        background: #003929;
+      }
+      .sec h2 {
+        color: #fff;
+        font-size: 3em;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      .sec p {
+        padding: 4vw;
+        font-size: 1.2em;
+        color: #fff;
+        line-height: 2em;
+        text-align: justify;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h2 class="logo">Logo</h2>
+      <nav class="navigation">
+        <a href="#" class="active">Home</a>
+        <a href="#">Blog</a>
+        <a href="#">About</a>
+        <a href="#">Portolio</a>
+        <a href="#">Contact</a>
+      </nav>
+    </header>
+
+    <section class="parallax">
+     
+      <img src="../Assets/tree.png" alt="" id="hill2"/>
+      
+      <img src="../Assets/mountain4.png" alt="" id="hill3"/>
+    
+      <img src="../Assets/mountain.png" alt="" id="hill1"/>
+      <h2 id="text">Parallax Website</h2>
+
+    </section>
+    <div class="sec">
+      <h2>Parallax scrolling</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste a tenetur fuga saepe. Dignissimos quo natus fugiat in cupiditate voluptates asperiores tempora quia molestiae id excepturi distinctio, architecto, ratione nam quidem porro consequatur tenetur quod, aut officiis veniam. Ex numquam impedit soluta nostrum velit est esse recusandae voluptatibus. Quod quibusdam minus quos quae ipsum sunt ducimus perspiciatis soluta fuga fugiat! Quisquam dolore mollitia aspernatur, distinctio optio consequatur veniam, repellendus recusandae cupiditate laboriosam quod possimus et praesentium vel a dolor ut. Eos nam, quo amet fuga est aspernatur accusantium architecto id nihil optio harum culpa enim nostrum sapiente rem placeat ex ipsam modi ducimus nemo odit similique cum consequuntur molestias! At id debitis ex fuga, doloribus quos asperiores excepturi voluptates ipsum porro nesciunt dolore soluta expedita in eos! Cupiditate dignissimos unde, tempora iusto distinctio magni eligendi alias odio explicabo, amet commodi repellat voluptatem impedit, aspernatur illo facere fugiat. Distinctio ad aperiam ducimus magnam doloribus at dolor vero soluta repellat, iste doloremque laborum ipsam placeat facere nulla quis? Consectetur soluta nihil illum voluptatem, repellat commodi ipsum magnam? Voluptatum, quaerat ducimus cumque soluta hic voluptas excepturi deleniti corrupti aperiam impedit doloribus perspiciatis sequi ipsam? Illum perspiciatis, aliquid nihil delectus suscipit vel fugit, explicabo ipsam sunt laudantium, consequuntur nisi. Fugiat porro ut blanditiis consectetur ab vitae error odit consequatur? Nisi autem deserunt, iste earum ipsam vel illo cupiditate soluta illum tenetur, quia repellendus magnam architecto numquam fuga. Natus, quaerat adipisci nisi incidunt accusantium, eveniet excepturi sequi nemo, fuga sint et deserunt aliquid? Officia explicabo esse quibusdam quis, beatae inventore pariatur repudiandae blanditiis praesentium laudantium fuga. Voluptatibus a expedita laboriosam, accusamus recusandae voluptate exercitationem fuga tenetur doloribus sequi maiores! Dignissimos adipisci maiores culpa labore tenetur hic enim! Dolorem nemo ipsam reiciendis rem ab nobis perferendis id voluptas consequuntur reprehenderit voluptate explicabo qui laborum sed assumenda eius quas, ex harum veritatis doloremque consectetur culpa odio nam! Optio earum laboriosam totam! Modi quas consectetur quidem vitae illo! Error odio recusandae cupiditate qui tempora! Inventore fugiat, dolore pariatur debitis illo, ab dolorem eveniet nemo laborum qui maxime modi enim sint nihil perspiciatis aspernatur doloribus labore deserunt quas repellendus, cumque explicabo facere! Impedit, dolor eveniet. Excepturi corrupti perspiciatis atque, aperiam itaque veniam quisquam officia quos laborum incidunt sapiente deserunt unde doloribus modi, sunt rem quae qui, commodi sequi! Possimus nobis, itaque eum est nihil voluptatum optio molestiae voluptatibus nostrum quam repellat? Quibusdam repellat et sed placeat incidunt neque, quae tempore sit ullam vel sint? Nemo, reprehenderit aliquid, reiciendis laborum ea perferendis repudiandae magni consequatur quae eaque fuga repellendus placeat labore alias fugiat odio expedita asperiores molestias, consectetur eius quas. Distinctio, quae tempore mollitia odit nisi pariatur consectetur provident nobis explicabo molestias similique praesentium facilis consequatur. Tempora nihil velit modi? Animi, inventore facilis. Quis repellat tenetur fugiat corporis explicabo quisquam quasi odit ipsum, consectetur sint alias consequatur, repellendus provident voluptatem illum ut enim voluptatum, corrupti ea deserunt laudantium nulla esse culpa minus. Soluta debitis labore quas officiis, aperiam a autem non ipsa unde incidunt sit, nihil necessitatibus alias quae maiores!</p>
+    
+    </div>
+
+    <script>
+      const text = document.getElementById('text');
+      const hill1 = document.getElementById('hill1');
+      const hill2 = document.getElementById('hill2');
+      const hill3 = document.getElementById('hill3');
+
+
+      window.addEventListener('scroll', () => {
+        let value = window.scrollY;
+        text.style.marginTop = value * 2.5 + 'px';
+        hill3.style.top = value * -2.5 + 'px';
+        hill1.style.left = value * 1.5 + 'px';
+        hill2.style.right = value * 1.5 + 'px';
+      
+    
+      })
+    </script>
+  </body>
+</html>
