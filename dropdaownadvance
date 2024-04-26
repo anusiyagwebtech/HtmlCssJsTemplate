@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>navbar advance</title>
+    <style>
+      *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background: linear-gradient(45deg,rgb(224, 255, 255),  rgb(10, 78, 22));
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+      }
+      header .logo {
+        font-size: 27px;
+        color: #000;
+        font-weight: 900;
+        font-style: italic;
+      }
+      header  nav > ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        list-style: none;
+      }
+      header nav ul li a {
+        text-decoration: none;
+        color: #fff;
+
+      }
+      section {
+        height: 100vh;
+        width: 100%;
+        background: var(--bg);
+      }
+      .dropdown1 {
+        z-index: 1;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: var(--wi);        
+        width: var(--w);
+        background: rgb(128, 128, 128,0.1);
+        display: flex;
+        flex-direction: column;
+        box-shadow: 2px 4px 5px rgba(0,0,0,0.15);
+        backdrop-filter: blur(34px);
+        gap: 10px ;
+        transition: 0.5s;
+      }
+      .dropdown1.displaysidebar{
+        left: 0;
+      }
+      .dropdown1 li {
+        width: 100%;
+        padding: 10px;
+        
+      }
+      .dropdown1 li:hover {
+        background: rgb(255, 255, 255,0.5);
+
+      }
+      .dropdown1 li a{
+        width: 100%;
+        display: inline-block;
+        color: #000;
+      }
+      .dropdown2 {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: var(--wi);
+        background: greenyellow;
+        width:var(--w);
+        z-index: 2;
+        transition: 0.5s;
+      }
+      .dropdown2.displaysidebar{
+        left: 0;
+      }
+      @media (min-width: 676px) {
+        :root {
+          --w: 25vw;
+          --wi: -25vw;
+        }
+      }
+      @media (max-width: 677px) {
+        :root {
+          --w: 60vw;
+          --wi: 25vw;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    
+    <header>
+      <div class="logo">Logo</div>
+     <nav>
+      <ul>
+        <li>
+          <a href="#" onclick="dropdown(this)">Home</a>
+          <ul class="dropdown1">
+            <li ><a href="#" onclick="dropdown(this)">dropdown1</a>
+            <ul class="dropdown2">
+              <li><a href="#">dropdown2</a></li>
+            <li><a href="#">dropdown2</a></li>
+            <li><a href="#">dropdown2</a></li>
+            <li><a href="#">dropdown2</a></li>
+            <li><a href="#">dropdown2</a></li>
+            <li><a href="#">dropdown2</a></li>
+            <li><a href="#">dropdown2</a></li>
+            <li><a href="#">dropdown2</a></li>
+            <li><a href="#">dropdown2</a></li>
+            <button onclick="drop(this)">&larr;</button>
+            </ul>
+            </li>
+            <li><a href="#" onclick="dropdown(this)">dropdown1</a>
+              <ul class="dropdown2">
+                <li><a href="#">dropdown2</a></li>
+              <li><a href="#">dropdown2</a></li>
+              <li><a href="#">dropdown2</a></li>
+              <li><a href="#">dropdown2</a></li>
+              <li><a href="#">dropdown2</a></li>
+              <li><a href="#">dropdown2</a></li>
+              <li><a href="#">dropdown2</a></li>
+              <li><a href="#">dropdown2</a></li>
+              <li><a href="#">dropdown2</a></li>
+              <button onclick="drop(this)">&larr;</button>
+              </ul>
+            </li>
+            <li><a href="#">dropdown1</a></li>
+            <li><a href="#">dropdown1</a></li>
+            <li><a href="#">dropdown1</a></li>
+            <li><a href="#">dropdown1</a></li>
+            <li><a href="#">dropdown1</a></li>
+            <li><a href="#">dropdown1</a></li>
+            <li><a href="#">dropdown1</a></li>
+            <button onclick="drop(this)">&larr;</button>
+          </ul>
+        </li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#"  onclick="dropdown(this)">Maximum</a>
+          <ul class="dropdown1" >
+            <li ><a href="#" onclick="dropdown(this)">dropdown1</a>
+            <ul class="dropdown2">
+              <li><a href="#" onclick="dropdown(this)">justify-content</a>
+                <ul class="dropdown2">
+                  <li><a href="#">dropdown2</a></li>
+                <li><a href="#">dropdown2</a></li>
+                <li><a href="#">dropdown2</a></li>
+                <li><a href="#">dropdown2</a></li>
+                <li><a href="#">dropdown2</a></li>
+                <li><a href="#">dropdown2</a></li>
+                <li><a href="#">dropdown2</a></li>
+                <li><a href="#">dropdown2</a></li>
+                <li><a href="#">dropdown2</a></li>
+                <button onclick="drop(this)">&larr;</button>
+                </ul>
+              </li>
+            <li><a href="#">dropdown2</a></li>
+            <li><a href="#">dropdown2</a></li>
+            <li><a href="#">dropdown2</a></li>
+            <li><a href="#">dropdown2</a></li>
+            <li><a href="#">dropdown2</a></li>
+            <li><a href="#">dropdown2</a></li>
+            <li><a href="#">dropdown2</a></li>
+            <li><a href="#">dropdown2</a></li>
+            <button onclick="drop(this)">&larr;</button>
+            </ul>
+            </li>
+            <li><a href="#" onclick="dropdown(this)">dropdown1</a>
+              <ul class="dropdown2">
+                <li><a href="#">dropdown2</a></li>
+              <li><a href="#">dropdown2</a></li>
+              <li><a href="#">dropdown2</a></li>
+              <li><a href="#">dropdown2</a></li>
+              <li><a href="#">dropdown2</a></li>
+              <li><a href="#">dropdown2</a></li>
+              <li><a href="#">dropdown2</a></li>
+              <li><a href="#">dropdown2</a></li>
+              <li><a href="#">dropdown2</a></li>
+              <button onclick="drop(this)">&larr;</button>
+              </ul>
+            </li>
+            <li><a href="#">dropdown1</a></li>
+            <li><a href="#">dropdown1</a></li>
+            <li><a href="#">dropdown1</a></li>
+            <li><a href="#">dropdown1</a></li>
+            <li><a href="#">dropdown1</a></li>
+            <li><a href="#">dropdown1</a></li>
+            <li><a href="#">dropdown1</a></li>
+            <button onclick="drop(this)">&larr;</button>
+          </ul>
+        </li>
+        <li><a href="#">Minimum</a></li>
+      </ul>
+    </nav>
+    </header>
+    <section style="--bg: lightblue;">
+
+    </section>
+    <section  style="--bg: rgb(247, 154, 231);">
+
+    </section>
+    <section style="--bg: rgb(172, 241, 151);">
+
+    </section>
+    <script>
+    const drop = (it) => {
+      const  parentElement = it.parentElement;
+      parentElement.classList.remove('displaysidebar');
+    }
+    const dropdown = (it) => {
+      console.log(it);
+      const parent = it.parentElement;
+      const ul = parent.querySelector('ul');
+      console.log(ul);
+      ul.classList.add('displaysidebar');
+    }
+    </script>
+  </body>
+</html>
