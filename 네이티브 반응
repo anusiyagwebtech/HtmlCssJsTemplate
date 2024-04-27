@@ -1,0 +1,425 @@
+React Native
+INSTALLATION NODE:
+Download node js:
+1. Go to Browser
+2. Search node js download
+3. (The official node js icon is shows with green logo) click the
+4. Click Latest version (LTS)
+5. select windows and download it.
+Install Node Js:
+1. double click the downloaded node js file in your local files (maximum it downloaded in
+download files )
+2. then it asks s popup the app can change your computer
+3. click yes
+4. and click next
+5. during installation process it asks automatic installation
+6. tick the checkbox (it is very necessary)
+7. and the command prompt is open
+8. press any key
+9. again press any key
+10. and then powershell is opened ( we don't need to access any things it just access it' s own
+things)
+
+Check the downloaded Node Js File:
+1. in Your search Bar
+2. Search cmd
+3. it shows command prompt
+4. just open it
+5. In command prompt type node -v and npm -v -> if it is installed correctly then version of
+the nodejs and npm is shows
+
+INSTALLATION ANDROID STUDIO:
+Download android studio:
+1. Go to Browser
+2. Search developer android.com
+3. (The official android studio icon is shows with green doll logo) click the link
+4. we can see download android studio
+5. just click the button
+6. It shows Download android studio HedgeHog
+7. click the button and download it. (At that time the version of the android studio (2023.1.1.28)
+Download and Install JDK(Java Development Kit):
+Download:
+1. Go to Browser
+2. Search Jdk download
+3. (The official oracle icon is shows with Java downloads oracle India) click the link
+
+4. we can see JDK17 just click the tab
+5. scroll It shows windows tab
+6. click the windows tab and download X64 Installer by click the link in direct.
+1. In search bar search Edit the system environment Variables click
+2. It shows Advanced tab and in here it shows environment variables
+3. click environment variables -> It shows system variables click new button
+4. It shows variable name and variable value In variable Name type Java_Home In variable
+Value Browse the directory C:\program-files\java\jdk-17 -> click ok button.
+Install Android Studio:
+Double click the android studio downloaded file
+Click Do not button
+ok , Next
+4 devices showed
+Install type is custom , Next , Next
+License Agreement , Next
+Emulated settings , next , Next
+License agreement (accept)
+click 3rd
+option Intel
+Finish
+It shows Downloading Components
+and is display the component path (c:users/user/appdata/local/android/sdk)
+finish
+and then it opens new window android studio
+It shows 4 options (projects, customize, plugin, learn) and in right side it shows open,
+new project, get from vcs and also display more actions. Click more actions
+click click sdk manager
+In stk platforms
+android 13.0 tiramisu, android sdk platform Intel X86_64, Google APIs then sdk tools
+android sdk Build_tools 34 , in 33.0.0 , Ndk side by side , in 25.1.89
+23.1.777
+click ok. Disk usage details showed click ok. And then all components installed just click
+finish and again the new project menu is also opened.
+1. In search bar search ‘Edit environmental variable’ In user variables for user
+2. click new button
+3. variable name : ANDROID_HOME , variable value:
+c:users\user\local\android\appdata\sdk (browse and choose the file) similarly again click
+new button variable name: ANDROID_SDK_ROOT , variable value:
+c:users\user\local\android\appdata\sdk,
+Search powershell and opened it and type Get-ChildItem – Path Env:\
+1. In android studio click more actions
+2. Virtual device management
+3. click + icon -> select Hardware
+4. click pixel 4 play store icon
+5. Next (It shows must be select
+6. X86 Images
+7. Tiramisu (select)
+8. next
+9. pixel4 and tiramisu is selected
+10. click finish , click play button , and it start
+Create react native app:
+
+npx react-native init projectname
+If error shows enter: npx install –g npm@10.4.0 (it also display in the error with green color)
+again type the command npx react-native init projectname
+start the metro server: npx react-native start
+Run the app: npx react-native run-android
+Extensions are used to Install:
+ES7 + (dsznajder)
+Javascript es6 code snippet (charlaus)
+Prettier code formatter
+React-native/ react/redux – Equimber
+Auto Close tag – Jun Ha
+Bracket pair color DLW
+Color Highlight – sergii N
+Material Icon – Philip keif
+
+Reset the app command:
+npm start -- --reset-cache
+Navigation
+Go to browser search reactnavigation.org -> clik -> In that page click getstarted
+Install native-navigation command : npm install @react-navigation/native
+Install react-native-screens react-native-safe-area-context:
+npm install react-native-screens react-native-safe-area-context
+Insert code in MainActivity.kt file which is located under
+android/app/src/main/java/<your package name>/.
+The code
+class MainActivity: ReactActivity() {
+// ...
+override fun onCreate(savedInstanceState: Bundle?) {
+super.onCreate(null)
+}
+// ...
+}
+Import the line above the file
+import android.os.Bundle;
+Install stack command: npm install @react-navigation/native-stack
+create folder named Navigation inside the folder create Mainstact.js, Routes.js In Routes.js file
+
+In App.js file after return give this codes
+return (
+<Routes/>
+)
+In Routes.js file:
+Const Stack = createNativeStackNavigator();
+return (
+<NavigationContainer>
+<Stack.Navigator>
+{MainStack(Stack)}
+</Stack.Navigator>
+</NavigationContainer>
+In Main.js file:
+Const MainStack = (Stack) =>
+{
+return(
+<>
+<Stack.Screen name=’HomeScreen’ component={HomeScreen} />
+</>
+)
+}
+In HomeScreen.js file:
+const HomeScreen = ()=> {
+return (
+<View>
+<Text>Text</Text>
+</View>
+)
+}
+Web view:
+We need to install ‘react native webview’
+Cmd: npm i react-native-webview
+import {WebView} from react-native-webview;
+return (
+<WebView source={{uri: ‘the website url’}} style={{flex: 1}}/>
+)
+WEB LINK:
+Linking to another website through browser we use Linking object.
+<TouchableOpacity onpress={()=> Linking.OpenUrl(‘Link of the website’)}>click
+me<TouchableOpacity>
+
+API GET METHOD:
+Fetch Method:
+const [post,setPost] = useState(null);
+const [loading, setLoading] = useState(false);
+useEffect(()=>{
+fetch('https://jsonplaceholder.typicode.com/posts').then((data)=> data.json()).then((data)=>
+setPost(data));
+}, []);
+return (
+<ScrollView style={{padding: 20, paddingBottom: 50}}>
+{
+(post) ? post.map((value,index)=>{
+return (
+<UserCard id={value.id} body={value.body} title={value.title} key={index}/>
+)
+}) : <Text>Hi</Text>
+}
+Axios Method:
+const getData = async () => {
+setLoading(true);
+try {
+axios({
+method: 'get',
+url: 'https://jsonplaceholder.typicode.com/posts',
+}).then((response) => {
+setPost(response.data);
+setLoading(false);
+})
+} catch (error) {
+setLoading(false);
+console.error('error', error.message);
+}
+}
+useEffect(() => {
+getData();
+}, []);
+Post Method:
+Fetch Method:
+const press = ()=> {
+fetch('https://65d47c9c3f1ab8c634354202.mockapi.io/Lock', {
+method: 'POST',
+headers: {
+Accept: "application/json",
+"Content-Type": "application/json",
+},
+body: JSON.stringify({
+username: userName,
+password: password,
+})
+}).then((response) => response.json()).then((responseData) => (JSON.stringify(responseData)))
+setUserName(''
+
+setPassword('');
+}
+Axios Method:
+const press = async () => {
+if(userName == "" | password == ""){
+showMessage({
+message: 'Enter Name and Password',
+type: 'info',
+backgroundColor: 'darkred',
+color: 'white',
+})
+}
+else{
+try {
+axios
+.post('https://65d47c9c3f1ab8c634354202.mockapi.io/Lock', {
+username: userName,
+password: password,
+})
+.then(response => setData(response.data));
+setUserName('');
+setPassword('');
+
+} catch (error) {
+setError(error);
+}
+show();
+}
+};
+function show(){
+(data) ? showMessage({
+message: 'Successfully Added',
+type: 'info',
+backgroundColor: 'darkgreen',
+color: 'white',
+}) : showMessage({
+message: 'error',
+type: 'info',
+backgroundColor: 'darkred',
+color: 'white',
+})
+}
+FORMIC (INPUT VALIDATION)
+Installed two packages
+1. npm install formik
+2. npm install yup
+import {Formik} from 'formik';
+const validate = Yup.object().shape( {
+name: Yup.string()
+
+.trim()
+.min(2, ({min}) => `Name must be at least ${min} characters`)
+.required('This Field is Nessessary'),
+email: Yup.string().trim().email('Invalid Email').required('Field '),
+password: Yup.string()
+.trim()
+.min(8, ({min}) => `Password atleast contain ${min} characters`)
+.required('this field is required'),
+confirmPassword: Yup.string()
+.oneOf([Yup.ref('password'), null], 'Password is must be matched')
+.required('This field is must be required'),
+phoneNum: Yup.string()
+.matches(/^[0-9]+$/, 'Must be 10 digits')
+.required('This field is required'),
+})
+
+<View style={{paddingHorizontal: 16}}>
+<Formik
+initialValues={IntialValues}
+validationSchema={validate}
+onSubmit={(values, formikActions) => {
+console.log('submit values', values);
+sendUserData(values)
+formikActions.resetForm()
+}}>
+{({
+values,
+errors,
+touched,
+handleChange,
+handleBlur,
+handleSubmit,
+}) => {
+// console.log(values);
+const {name, password, confirmPassword, phoneNum, email} = values;
+//console.log('errors.name', errors.name);
+return (
+<View>
+<CutomTextInput
+placeholder={'Name...'}
+placeholderTextColor={'grey'}
+value={name}
+onChangeText={handleChange('name')}
+onBlur={handleBlur('name')}
+error={touched.name && errors.name}
+/>
+<CutomTextInput
+placeholder={'Email...'}
+placeholderTextColor={'grey'}
+value={email}
+onChangeText={handleChange('email')}
+onBlur={handleBlur('email')}
+error={touched.email && errors.email}
+keyboardType={'email-address'}
+/>
+<CutomTextInput
+placeholder={'Password...'}
+
+placeholderTextColor={'grey'}
+value={password}
+onChangeText={handleChange('password')}
+onBlur={handleBlur('password')}
+error={touched.password && errors.password}
+secureTextEntry={true}
+/>
+<CutomTextInput
+placeholder={'Confirm Password...'}
+placeholderTextColor={'grey'}
+value={confirmPassword}
+onChangeText={handleChange('confirmPassword')}
+onBlur={handleBlur('confirmPassword')}
+error={touched.confirmPassword && errors.confirmPassword}
+secureTextEntry={true}
+/>
+<CutomTextInput
+placeholder={'Phone Number...'}
+placeholderTextColor={'grey'}
+value={phoneNum}
+onChangeText={handleChange('phoneNum')}
+maxLength={10}
+keyboardType={'numeric'}
+onBlur={handleBlur('phoneNum')}
+error={touched.phoneNum && errors.phoneNum}
+/>
+<MyButton
+btnName={'submit'}
+btnStyle={{marginTop: 20, height: 47}}
+onPress={()=> handleSubmit()}
+/>
+</View>
+);
+}}
+</Formik>
+</View>
+---
+Run the app in our mobile: 
+1.	Go to your mobiles settings
+2.	Go to the about phone
+3.	In about phone go to software Information
+4.	 Go to build number
+5.	Enter the pin
+6.	Go to developer options and make it on
+7.	Go to usb debugging ( allow usb debugging and then connect the mobile to computer with usb cable and in your project run the project and is also runned in your mobile
+---run app---
+
+Build APK: (Android Package Kit File format) 
+Refernce : https://reactnative.dev/docs/signed-apk-android
+1. Open the command prompt run as administrator and in change the directory to java file following path.
+2. (C:\Program Files\Java\jdkx.x.x_x\bin)
+3. copy the code 
+4. keytool -genkeypair -v -storetype PKCS12 -keystore my-upload-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
+5. this command asks some questions and answer it for  and then it generates  my-upload-key.keystore in the path of (java/jdk-/bin/my-upload-key.keystore)
+6. cut the file and copy in your project  (android / app/) folder.
+7. Go to your projects (android/gradle.properties) file
+8. And copy the below code in the (android/gradle.properties) file page last line 
+MYAPP_UPLOAD_STORE_FILE=my-upload-key.keystore
+MYAPP_UPLOAD_KEY_ALIAS=my-key-alias
+MYAPP_UPLOAD_STORE_PASSWORD=*****
+MYAPP_UPLOAD_KEY_PASSWORD=*****
+9. Instead of star you gave your password that is asked before .
+10. Go to your project’s android/app/build.gradle 
+11. and copy the below code.
+...
+android {
+    ...
+    defaultConfig { ... }
+    signingConfigs {
+        release {
+            if (project.hasProperty('MYAPP_UPLOAD_STORE_FILE')) {
+                storeFile file(MYAPP_UPLOAD_STORE_FILE)
+                storePassword MYAPP_UPLOAD_STORE_PASSWORD
+                keyAlias MYAPP_UPLOAD_KEY_ALIAS
+                keyPassword MYAPP_UPLOAD_KEY_PASSWORD
+            }
+        }
+    }
+    buildTypes {
+        release {
+            ...
+            signingConfig signingConfigs.release
+        }
+    }
+}
+...
+12.  go to your project and open the terminal change the directory to (/android) and command the code below.
+13. ./gradlew assembleRelease
+14. go to your project’s android/app/build/outputs/bundle/release/app-release.apk file . copy the file and paste it to your mobile download section and install it .
+---Build APK---
