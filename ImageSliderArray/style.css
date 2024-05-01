@@ -1,0 +1,59 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(rgb(202, 238, 202), rgb(49, 90, 49));
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+.img-container {
+    width: 60%;
+    border: 2px solid rgba(255,255,255,0.3);
+    height: 80vh;
+    background: url('assets/img1.jpg') center/cover fixed no-repeat;
+    border-radius: 5px;
+    box-shadow: 1px 1px 4px rgba(255,255,255,0.3);
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    transition:all 1s linear;
+}
+.img-container .btn {
+    position: absolute;
+    color: #fff;
+    top: 50%;
+    background: rgba(0,0,0,0.4);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 3px 4px rgba(255,255,255,0.5),-2px -3px 4px rgba(255,255,255,0.5);
+    border: 3px solid rgb(255, 255, 255,0.6);
+    cursor: pointer;
+    transition: 0.3s linear;
+}
+.img-container .btn:active {
+    border: 3px solid rgb(255, 255, 255,0.9);
+
+}
+.img-container .btn-left {
+    left: 0px;
+    transform: translateX(-50%) translateY(-50%);
+
+}
+.img-container .btn-right {
+    right: 0px;
+    transform: translateX(50%) translateY(-50%);
+
+}
