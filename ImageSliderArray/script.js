@@ -1,5 +1,7 @@
 //Immediately invoked function expression - IIFE
 //It is anonymous function.
+//Immediately Invoked function,  array, classList.contains(), array.foreach, ``, count variable
+
 (function () {
     const pictures = [
         "img1",
