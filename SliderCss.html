@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Gallery</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           height: 100vh;
+        }
+        .container {
+           width: 800px;
+           height: 450px;
+           position: relative;
+          
+        }
+        .sliders {
+            width: 800px;
+            height: 100%;
+            overflow: hidden;
+            transition: 5s;
+
+        }
+        .slider-img {
+            width: 800px !important;
+            height: 100%;
+            flex: none;
+            box-shadow: 1px 3px 4px rgba(0,0,0);
+        }
+        .labels  {
+            position: absolute;
+            bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+            width: 100%;
+            text-align: center;
+        }
+        .labels label {
+
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            border: 3px solid #e4dfdf;
+            transition: 0.4s;
+            cursor: pointer;
+        }
+        .labels label:hover {
+          background: #fff;
+        }
+        .sliders {
+            display: flex;
+        }
+        input {
+            display: none;
+        }
+        #sliderimg1 {
+            transition: 0.4s;
+        }
+        #slider1:checked ~ #sliderimg1 {
+            margin-left: 0%;
+        }
+        #slider2:checked ~ #sliderimg2 {
+            margin-left: -100%;
+        }
+        #slider3:checked ~ #sliderimg2 {
+            margin-left: -200%;
+        }
+        #slider4:checked ~ #sliderimg4 {
+            margin-left: -300%;
+        }
+        #slider5:checked ~ #sliderimg5 {
+            margin-left: -400%;
+        }
+        
+        .sliders:has(#slider1:checked) ~ .labels label[for="slider1"] {
+          background: #fff;
+        }
+        .sliders:has(#slider2:checked) ~ .labels label[for="slider2"] {
+          background: #fff;
+        }
+        .sliders:has(#slider3:checked) ~ .labels label[for="slider3"] {
+          background: #fff;
+        }
+        .sliders:has(#slider4:checked) ~ .labels label[for="slider4"] {
+          background: #fff;
+        }
+        .sliders:has(#slider5:checked) ~ .labels label[for="slider5"] {
+          background: #fff;
+        }
+
+        
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sliders">
+        <input type="radio" name="slider" id="slider1" checked/><input
+          type="radio"
+          name="slider"
+          id="slider2"
+        /><input type="radio" name="slider" id="slider3" /><input
+          type="radio"
+          name="slider"
+          id="slider4"
+        /><input type="radio" name="slider" id="slider5" />
+
+      <div class="slider-img" style="background: rgb(2, 207, 2);" id="sliderimg1">
+       <h1>Hello World</h1>
+      </div>
+      <div class="slider-img" style="background: rgb(5, 115, 240);" id="sliderimg2">
+        slider2
+      </div>
+      <div class="slider-img" style="background: rgb(252, 42, 140);" id="sliderimg3">
+        slider3
+      </div>
+      <div class="slider-img" style="background: rgb(248, 43, 248);" id="sliderimg4">
+       slider4
+      </div>
+      <div class="slider-img" style="background: rgb(209, 155, 5);" id="sliderimg5">
+       slider5
+      </div>
+
+      </div>
+      <div class="labels">
+   
+        <label for="slider1"></label>
+        <label for="slider2"></label>
+        <label for="slider3"></label>
+        <label for="slider4"></label>
+        <label for="slider5"></label>
+
+      </div>
+    </div>
+  </body>
+</html>
