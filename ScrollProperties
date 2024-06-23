@@ -1,0 +1,12 @@
+Dom Elements:
+
+ 1. dom.scrollLeft
+ 2. dom.scrollTop
+ 3. dom.width
+ 4. dom.scrollHeight
+ 5. dom.scroll(x,y) , dom.scroll({top: 0, left: 0, behaviour: "smooth"})
+ 6. dom.scrollTo(x,y) , dom.scrollTo({top: 0, left: 0, behaviour: "smooth"})
+ 7. dom.scrollBy(x,y) , dom.scrollBy({top: 0, left: 0, behaviour: "auto"})
+ 8. window.scroll(x,y)
+ 9. window.scrollTo({top: 0, left: 0, behaviour: "smooth"})
+10. window.scrollBy(x,y);
