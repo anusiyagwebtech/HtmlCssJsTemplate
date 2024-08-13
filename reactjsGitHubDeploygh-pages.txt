@@ -1,0 +1,23 @@
+1. create  repository in github
+2. git init
+3. git add .
+4. git commit -m "first commit"
+5. git branch -M main
+6. git remote add origin https://github.com/<username>/<rep Name>.git
+7. git push -u origin main
+8. npm install gh-pages --save-dev
+9. pakage.json
+   "homepage": "https://<Username>.github.io/<Repository-name>"
+10. "scripts":{
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build" 
+}   
+11. git add .
+12. git commit -m "commit"
+13. git push
+14. npm run deploy
+
+after 9 th point we should add the repository name in the /
+<Route path='/' element={<Screens.HomeScreen/>}/>
+<Route path='repositoryname/' element={<Screens.HomeScreen/>}/>
+
